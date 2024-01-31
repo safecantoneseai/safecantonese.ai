@@ -9,7 +9,8 @@ import Container from '@mui/material/Container'
 import TelegramIcon from '@mui/icons-material/Telegram'
 import AppleIcon from '@mui/icons-material/Apple'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import { IconButton, Stack } from '@mui/material'
+import AndroidIcon from '@mui/icons-material/Android'
+import { IconButton, Link, Stack } from '@mui/material'
 
 function Question({ children }: { children: React.ReactNode }) {
   return (
@@ -120,6 +121,15 @@ export default function Home() {
           私隱安全同埋準確度兼具嘅免費 Whatsapp 廣東話轉文字 AI 工具
         </Typography>
         <Typography
+          component="h1"
+          variant="h4"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          Shortcut
+        </Typography>
+        <Typography
           variant="h5"
           align="center"
           color="text.secondary"
@@ -141,6 +151,53 @@ export default function Home() {
         >
           安裝 iOS Shortcut
         </Button>
+        <Typography
+          component="h1"
+          variant="h4"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          App
+        </Typography>
+        <Typography
+          variant="h5"
+          align="center"
+          color="text.secondary"
+          component="p"
+        >
+          React Native app 使用 fine-tuned 咗嘅 whisper small/base model
+          直接係手機轉錄, 完全offline, 無需將資料傳送到網絡，暫時只有android版
+        </Typography>
+        <Button
+          component="a"
+          href="https://play.google.com/store/apps/details?id=me.wcyat.safecantoneseai"
+          variant="contained"
+          color="primary"
+          startIcon={<AndroidIcon />}
+          target="_blank"
+        >
+          Play store 下載
+        </Button>
+        <Button
+          component="a"
+          href="https://github.com/sdip15fa/safecantonese.ai.app"
+          variant="contained"
+          color="secondary"
+          startIcon={<GitHubIcon />}
+          target="_blank"
+        >
+          Source Code
+        </Button>
+        <Typography
+          component="h1"
+          variant="h4"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          Contact
+        </Typography>
         <Button
           component="a"
           href="https://t.me/safecantoneseai"
@@ -172,7 +229,7 @@ export default function Home() {
           sx={{ pb: 1 }}
           gutterBottom
         >
-          FAQs
+          Shortcut FAQs
         </Typography>
         <Question>呢個工具真係免費嘅？</Question>
         <Answer>
@@ -257,6 +314,67 @@ export default function Home() {
         </Answer>
         <Question>站主係咩人？</Question>
         <Answer>純粹科技界小薯一件，希望各位多多指教🙏。</Answer>
+      </Container>
+      <Container
+        disableGutters
+        maxWidth="sm"
+        component="main"
+        sx={{
+          pt: 8,
+          pb: 6,
+          backgroundColor: theme.palette.background.paper,
+          pl: 2,
+          pr: 2,
+        }}
+      >
+        <Typography
+          component="h2"
+          variant="h5"
+          align="center"
+          color="text.primary"
+          sx={{ pb: 1 }}
+          gutterBottom
+        >
+          App FAQs (by author{' '}
+          <Link target="_blank" href="https://wcyat.me">
+            wcyat
+          </Link>
+          )
+        </Typography>
+        <Question>呢個工具真係免費嘅？</Question>
+        <Answer>Yes</Answer>
+        <Question>咁你點賺錢？</Question>
+        <Answer>I made this with the aim to help all HongKongers.</Answer>
+        <Question>點解會整呢個 app / website / shortcut？</Question>
+        <Answer>Same as above</Answer>
+        <Question>你個 app/shortcut 會唔會攞我啲錄音賣俾 CIA MI6 架？</Question>
+        <Answer>Impossible as the app is completely offline.</Answer>
+        <Question>點解我要信你？</Question>
+        <Answer>
+          You can check the source code yourself. Also, check that the app doesn
+          {"'"}t have Internet permission after you have downloaded it.
+        </Answer>
+        <Question>點解會有時會 load 好耐？</Question>
+        <Answer>
+          The loading time increases with audio length. You may want to switch
+          to a faster model in the models tab.
+        </Answer>
+        <Question>你個嘢壞咗呀／有其他 bug 喎。</Question>
+        <Answer>
+          麻煩幫手入去 Telegram group{' '}
+          <Hyperlink href="https://t.me/safecantoneseai">
+            https://t.me/safecantoneseai
+          </Hyperlink>{' '}
+          回報一下。 Or: GitHub Issues{' '}
+          <Hyperlink href="https://github.com/sdip15fa/safecantonese.ai.app/issues">
+            https://github.com/sdip15fa/safecantonese.ai.app/issues
+          </Hyperlink>{' '}
+        </Answer>
+        <Question>IOS？</Question>
+        <Answer>
+          I cannot test on IOS without an apple developer account. Consider
+          helping me for iOS development.
+        </Answer>
       </Container>
     </>
   )
